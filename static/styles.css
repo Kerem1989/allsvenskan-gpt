@@ -3,25 +3,25 @@ body, html {
     margin: 0;
     font-family: 'Source Sans Pro', Arial, sans-serif;
     background-color: #282c34;
-    color: #ff6666; /* Ljusröd text */
-    overflow: hidden; /* För att förhindra scrollning */
+    color: #d01919;
+    overflow: hidden;
 }
 
 .header {
     width: 100%;
-    height: 16px; /* Justera höjden om du vill ha en tunnare eller tjockare linje */
-    background-color: black;
+    height: 16px;
+    background-color: #000000;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000; /* Se till att headern är överst */
+    z-index: 1000;
 }
 
 #chat-container {
     padding: 20px;
     box-sizing: border-box;
-    height: calc(100vh - 10px); /* Justera höjden så den tar hänsyn till headerns höjd */
-    margin-top: 10px; /* Flytta ner så den hamnar under headern */
+    height: calc(100vh - 10px);
+    margin-top: 10px;
 }
 
 #chat-box {
@@ -29,9 +29,9 @@ body, html {
     flex-grow: 1;
     overflow-y: auto;
     background-color: white;
-    color: black;
+    color: #ff0000;
     padding: 10px;
-    margin-bottom: 50px; /* Öka marginalen för att skapa mer utrymme under chattboxen */
+    margin-bottom: 50px;
 }
 
 .user-message, .bot-message {
@@ -43,13 +43,13 @@ body, html {
 }
 
 .user-message {
-    background-color: #ff6666; /* Ljusröd bakgrund */
+    background-color: rgba(25, 0, 255, 0.84);
     color: white;
     justify-content: flex-start;
 }
 
 .bot-message {
-    background-color: #001f3f; /* Blå bakgrund */
+    background-color: #d01919;
     color: white;
     justify-content: flex-end;
 }
@@ -57,57 +57,62 @@ body, html {
 #input-container {
     display: flex;
     width: 100%;
-    margin-top: 20px; /* Justera marginalen för att flytta inmatningsbehållaren uppåt */
-    margin-bottom: 20px; /* Utrymme mellan inmatningsbehållaren och botten av sidan */
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 input[type="text"].long-input {
-    flex-grow: 3; /* Gör inmatningsfältet längre */
-    padding: 10px; /* Mindre padding för att spara utrymme */
+    flex-grow: 3;
+    padding: 10px;
     margin-right: 5px;
-    border: 1px solid #ff6666; /* Ljusröd kant */
+    border: 1px solid #d01919;
+    height: 38px;
+    border-radius: 4px;
+
 }
 
 button.small-button {
     cursor: pointer;
-    background-color: #001f3f; /* Mörkblå bakgrund */
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 5px 10px; /* Mindre padding för knappen */
+    padding: 5px 10px;
+    width: 100px;
+    height: 38px;
+    border-radius: 4px;
 }
 
 .patent-gpt-title {
     text-align: left;
     margin-bottom: 10px;
-    color: #ff6666; /* Ljusröd text */
-    font-size: 1.2rem; /* Mindre storlek för rubriken i den blågrå sektionen */
-    margin-top: 0; /* Justera för att flytta ner rubriken en aning */
+    color: #d01919;
+    font-size: 1.2rem;
+    margin-top: 0;
 }
 
 .patent-gpt-main-title {
     text-align: center;
     margin-bottom: 10px;
-    color: #ff6666; /* Ljusröd text */
-    font-size: 2rem; /* Ursprunglig storlek för huvudrubriken i mitten */
+    color: #d01919;
+    font-size: 2rem;
 }
 
 .custom-hr {
-    border: 2px solid #ff6666; /* Tjockare och ljusröd linje */
+    border: 2px solid #d01919;
     width: 100%;
 }
 
 .year {
-    color: #ff6666;
+    color: #d01919;
     font-size: 1.2rem;
-    margin-left: 10px; /* Lägger till marginal så att det inte är för nära rubriken */
-    margin-top: 1; /* Justera för att linjera med rubriken */
+    margin-left: 10px;
 }
 
 .patent-gpt-info-title {
     text-align: center;
-    color: #ff6666; /* Ljusröd text */
-    font-size: 1.5rem; /* Mindre än huvudrubriken */
-    margin-top: 10px; /* Flytta upp rubriken i informationssektionen */
+    color: #d01919;
+    font-size: 1.5rem;
+    margin-top: 10px;
 }
 
 .patent-bold {
@@ -115,7 +120,7 @@ button.small-button {
 }
 
 .info-box-container {
-    margin-top: 10px; /* Justera denna marginal för att flytta informationsrutorna nedåt */
+    margin-top: 10px;
 }
 
 .info-box {
@@ -124,38 +129,44 @@ button.small-button {
     border-radius: 5px;
     color: #333;
     margin-bottom: 10px;
-    border: 1px solid #ff6666; /* Ljusröd kant */
+    border: 1px solid #d01919;
 }
 
 .section-title {
     font-size: 1.2rem;
     margin-bottom: 10px;
     text-align: center;
-    color: #ff6666;
-    /* Lj```html
-   /* Ny stil för den ljusblågrå sektionen */
+    color: #d01919;
+}
 
-    .bg-lightpink {
-        background-color: #ffd1dc; /* Ljusrosa färg */
-        height: calc(110vh - 0px); /* Justera höjden så den tar hänsyn till headerns höjd */
-        width: 100%; /* Gör den blågrå sektionen bredare */
-        max-width: 20%; /* Sätt en maximal bredd för sektionen */
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding-top: 40px; /* Justera för att flytta ner rubriken och knappen */
-        padding-left: 10px; /* Justera för att flytta in innehållet från vänster */
-    }
+.bg-lightpink {
+    background-color: #a0aabb;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 40px;
+    padding-left: 10px;
+}
 
-    .btn-primary {
-        background-color: #001f3f; /* Mörkblå bakgrund */
-        border-color: #001f3f;
-        width: 80%; /* Justera bredden på knappen */
-    }
+.btn-primary {
+    background-color: #d01919;
+    border-color: #d01919;
+    width: 50%;
+}
 
-    .btn-secondary {
-        background-color: #001f3f; /* Mörkblå bakgrund */
-        border-color: #001f3f;
-    }
+.btn-secondary {
+    background-color: #d01919;
+    border-color: #d01919;
+}
+
+.medium-button {
+    width: 70%;
+    color: rgba(25, 0, 255, 0.84);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 20px;
 }

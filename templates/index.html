@@ -1,58 +1,53 @@
 <!DOCTYPE html>
 <html lang="sv">
 <head>
-  <meta charset="UTF-8">
-  <title>PatentGPT</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <meta charset="UTF-8">
+    <title>PatentGPT</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" sizes="32x32" href="{{ url_for('static', filename='favicon.png') }}" type="image/png">
 </head>
 <body>
 <div id="header" class="header"></div>
 <div id="chat-container" class="container-fluid">
-  <div class="row">
-    <div class="col-lg-2 d-flex flex-column align-items-start bg-lightpink p-3">
-      <div class="d-flex justify-content-between w-100 align-items-center">
-        <h4 class="patent-gpt-title"><span class="patent-bold">Patent</span>GPT 2024</h4>
-      </div>
-      <button onclick="location.reload()" class="btn btn-primary mt-3 w-100">Återställ sida</button>
+    <div class="row">
+        <div class="col-lg-2 d-flex flex-column align-items-start bg-lightpink p-3">
+            <div class="d-flex justify-content-between w-100 align-items-center">
+                <h4 class="patent-gpt-title"><span class="patent-bold">Patent</span>GPT 2024</h4>
+            </div>
+            <button onclick="location.reload()" class="btn btn-primary medium-button">Återställ sida</button>
+        </div>
+        <div class="col-lg-6 d-flex flex-column align-items-center vh-100">
+            <h2 class="patent-gpt-main-title"><span class="patent-bold">Patent</span>GPT</h2>
+            <hr class="w-100 custom-hr">
+            <div id="chat-box" class="w-100 bg-light overflow-auto p-3 mb-2">
+            </div>
+            <form id="input-form" class="w-100 d-flex align-items-center mt-3 mb-3" onsubmit="submitPrompt(); return false;">
+                <input type="text" id="userInput" class="form-control mr-2 long-input" placeholder="Ställ din fråga här..." autofocus>
+                <button type="submit" class="btn btn-primary small-button">Skicka</button>
+            </form>
+        </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-start info-box-container">
+            <h4 class="section-title"><i class="fas fa-question-circle"></i> Vad är detta?</h4>
+            <div class="info-box">
+                <p>PatentGPT är en AI-baserad assistent som hjälper dig med frågor gällande patent.</p>
+            </div>
+            <h4 class="section-title"><i class="fas fa-cogs"></i> Hur fungerar det?</h4>
+            <div class="info-box">
+                <p>Hjälper dig med frågor gällande patentansökningar, patentlagar och andra patentrelaterade frågor.</p>
+            </div>
+            <h4 class="section-title"><i class="fas fa-exclamation-triangle"></i> En varningens finger!</h4>
+            <div class="info-box">
+                <p>Tänk på att informationen kan variera och du bör alltid dubbelkolla med en patentexpert för juridiskt bindande information.</p>
+            </div>
+        </div>
     </div>
-    <div class="col-lg-6 d-flex flex-column align-items-center vh-100">
-      <h2 class="patent-gpt-main-title"><span class="patent-bold">Patent</span>GPT</h2>
-      <hr class="w-100 custom-hr">
-      <div id="chat-box" class="w-100 bg-light overflow-auto p-3 mb-2">
-        <!-- Chat messages will appear here -->
-      </div>
-      <div id="input-container" class="w-100 d-flex align-items-center mt-3 mb-3">
-        <input type="text" id="userInput" class="form-control mr-2 long-input" placeholder="Ställ din fråga här..." autofocus>
-        <button onclick="submitPrompt()" class="btn btn-primary small-button">Skicka</button>
-      </div>
-    </div>
-    <div class="col-lg-4 d-flex flex-column justify-content-start info-box-container">
-      <h4 class="section-title"><i class="fas fa-question-circle"></i> Vad är detta?</h4>
-      <div class="info-box">
-        <p>PatentGPT är en AI-baserad assistent som hjälper dig med frågor gällande patent.</p>
-      </div>
-      <h4 class="section-title"><i class="fas fa-cogs"></i> Hur fungerar det?</h4>
-      <div class="info-box">
-        <p>Hjälper dig med frågor gällande patentansökningar, patentlagar och andra patentrelaterade frågor.</p>
-      </div>
-      <h4 class="section-title"><i class="fas fa-exclamation-triangle"></i> En varningens finger!</h4>
-      <div class="info-box">
-        <p>Tänk på att informationen kan variera och du bör alltid dubbelkolla med en patentexpert för juridiskt bindande information.</p>
-      </div>
-    </div>
-  </div>
 </div>
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
-<!-- Bootstrap JavaScript -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
