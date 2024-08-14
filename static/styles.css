@@ -40,19 +40,23 @@ body, html {
     padding: 10px;
     margin: 10px 0;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .user-message {
-    background-color: rgba(25, 0, 255, 0.84);
-    color: white;
+    background-color: #e8f0fe; /* Light blue */
+    color: #3b5998; /* Dark blue text */
     justify-content: flex-start;
+    margin-left: auto;
 }
 
 .bot-message {
-    background-color: #d01919;
-    color: white;
+    background-color: #dfe3ee; /* Lighter shade of blue */
+    color: #36465d; /* Darker text */
     justify-content: flex-end;
+    margin-right: auto;
 }
+
 
 #input-container {
     display: flex;
@@ -170,3 +174,22 @@ button.small-button {
     text-align: center;
     margin-top: 20px;
 }
+
+.pulsing {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+

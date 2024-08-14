@@ -3,7 +3,7 @@ import openai
 import os
 
 app = Flask(__name__)
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = 'sk-proj-4fVuwTHDhbs68bvMjXI7T3BlbkFJtKUbIbdjrnYXFcJ55MVt'
 
 
 def is_response_relevant(response):
@@ -50,7 +50,7 @@ def generate():
                 {"role": "user", "content": improvement_prompt}
             ],
             max_tokens=400,
-            temperature=0.5
+            temperature=0.6,
         )
         improved_text = improvement_response.choices[0].message['content'].strip()
 
