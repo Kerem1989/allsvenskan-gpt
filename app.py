@@ -3,7 +3,7 @@ import openai
 import os
 
 app = Flask(__name__)
-openai.api_key = 'sk-proj-4fVuwTHDhbs68bvMjXI7T3BlbkFJtKUbIbdjrnYXFcJ55MVt'
+openai.api_key = ''
 
 
 def is_response_relevant(response):
