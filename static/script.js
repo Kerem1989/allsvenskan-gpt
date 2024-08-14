@@ -1,10 +1,15 @@
 function submitPrompt() {
     const inputBox = document.getElementById('userInput');
     const chatBox = document.getElementById('chat-box');
+    const loadingBubble = document.getElementById('loading-bubble');
     const userText = inputBox.value.trim();
 
     if (userText) {
         chatBox.innerHTML += `<div class='user-message'>Användare: ${userText}</div>`;
+        inputBox.value = '';
+
+        // Visa pulserande bubbla
+        loadingBubble.classList.remove('hidden');
 
         fetch('/generate', {
             method: 'POST',
@@ -21,12 +26,15 @@ function submitPrompt() {
                     chatBox.innerHTML += `<div class='bot-message'>PatentGPT: ${data.response}</div>`;
                 }
                 chatBox.scrollTop = chatBox.scrollHeight;
+
+                // Dölj pulserande bubbla
+                loadingBubble.classList.add('hidden');
             })
             .catch(error => {
                 chatBox.innerHTML += `<div class='bot-message'>PatentGPT: Ett fel inträffade: ${error.message}</div>`;
-            });
 
-        inputBox.value = '';
+                // Dölj pulserande bubbla
+                loadingBubble.classList.add('hidden');
+            });
     }
 }
-

@@ -1,19 +1,19 @@
 from flask import Flask, request, jsonify, render_template
 import openai
 import os
+import re
 
 app = Flask(__name__)
-openai.api_key = os.getenv('OPENAI_API_KEY')
-
-
-
-
-
+openai.api_key = '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'
 
 def is_response_relevant(response):
-    # Kontrollera om svaret innehåller nyckelord relaterade till patent
     patent_keywords = ["patent", "uppfinning", "registrering", "PRV", "immateriella rättigheter", "varumärke"]
     return any(keyword in response.lower() for keyword in patent_keywords)
+
+def remove_formatting(text):
+    text = re.sub(r'\*\*', '', text)
+    text = re.sub(r'\*', '', text)
+    return text.strip()
 
 @app.route('/')
 def index():
@@ -37,16 +37,17 @@ def generate():
         )
         generated_text = response.choices[0].text.strip()
 
-        # Kontrollera om svaret är relevant och giltigt
-        if not is_response_relevant(generated_text):
-            generated_text = (
+        formatted_text = remove_formatting(generated_text)
+
+        if not is_response_relevant(formatted_text):
+            formatted_text = (
                 "Det verkar som att din fråga inte direkt handlar om patent och registrering. "
                 "För mer detaljerad och specifik information, vänligen kontakta Patent- och registreringsverket (PRV). "
                 "Du kan besöka deras hemsida på [www.prv.se](http://www.prv.se) för att läsa mer eller använda deras online-tjänster. "
                 "Om du föredrar personlig kontakt, ring 08-782 28 00 eller skicka ett mejl till kundsupport@prv.se."
             )
 
-        improvement_prompt = f"Förbättra följande svar så att det är mer informativt och användarvänligt och håll det kort och använd radbrytningar:\n\n{generated_text}"
+        improvement_prompt = f"Förbättra följande svar så att det är mer informativt och användarvänligt utan att använda någon formatering:\n\n{formatted_text}"
         improvement_response = openai.ChatCompletion.create(
             model="gpt-4-turbo",
             messages=[

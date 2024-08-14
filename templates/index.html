@@ -23,8 +23,7 @@
         <div class="col-lg-6 d-flex flex-column align-items-center vh-100">
             <h2 class="patent-gpt-main-title"><span class="patent-bold">Patent</span>GPT</h2>
             <hr class="w-100 custom-hr">
-            <div id="chat-box" class="w-100 bg-light overflow-auto p-3 mb-2">
-            </div>
+            <div id="chat-box" class="w-100 bg-light overflow-auto p-3 mb-2"></div>
             <form id="input-form" class="w-100 d-flex align-items-center mt-3 mb-3" onsubmit="submitPrompt(); return false;">
                 <input type="text" id="userInput" class="form-control mr-2 long-input" placeholder="Ställ din fråga här..." autofocus>
                 <button type="submit" class="btn btn-primary small-button">Skicka</button>
@@ -46,6 +45,12 @@
         </div>
     </div>
 </div>
+
+
+<div id="loading-bubble" class="hidden">
+    <i class="fas fa-spinner fa-spin"></i> PatentGPT tänker...
+</div>
+
 
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
