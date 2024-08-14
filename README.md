@@ -44,13 +44,12 @@
 
 <!-- TECHNOLOGIES USED -->
 ## Technologies used
-* [![Java][Java.com]][Java-url]
-* [![MySQL][MySQL.com]][MySQL-url]
-* [![Spring Boot][SpringBoot.com]][SpringBoot-url]
+* [![Python][Python.com]][Python-url]
+* [![Flask][Flask.com]][Flask-url]
+* [![OpenAI][OpenAI.com]][OpenAI-url]
 * [![HTML][HTML.com]][HTML-url]
 * [![JavaScript][JavaScript.com]][JavaScript-url]
-* [![Thymeleaf][Thymeleaf.com]][Thymeleaf-url]
-* [![Maven][Maven.com]][Maven-url]
+* [![CSS][CSS.com]][CSS-url]
 
 
 
@@ -64,15 +63,22 @@
 
 To run this project, you need the following software installed:
 
-* Java Development Kit (JDK) 11 or higher
-* Maven for managing dependencies and building the project
-* MySQL for database management
+* Python 3.7 or higher
+* Flask for creating the web application
+* OpenAI Python package for interacting with the OpenAI API
 
-## Installation
-* Clone the repository
-* Build the project using Maven
-* Run the tests to ensure everything is set up correctly
-* To start the application, run the following command: java -jar target/webshop-1.0-SNAPSHOT.jar
+
+### Breakdown:
+- **Clone the Repository:** Instructions to clone the repo and navigate into the directory.
+- **Create and Activate a Virtual Environment:** Setting up a virtual environment for dependency management.
+- **Install the Required Packages:** Installing dependencies listed in `requirements.txt`.
+- **Set Up Environment Variables:** Instructions to set up the OpenAI API key as an environment variable.
+- **Run the Application:** Running the Flask app locally.
+- **Access the Application:** Instructions to access the running application.
+- **Running Tests:** Placeholder if you want to include test instructions.
+- **Usage:** How to interact with the `/generate` endpoint.
+
+This guide should help someone set up and run your Flask application smoothly.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -86,12 +92,7 @@ Distributed under the MIT License.
 ## Contact
 Kerem Bjälvenäs Tazedal - kerem.tazedal.89@gmail.com
 
-Project Link: [https://github.com/Kerem1989/JavaEE-Webshop](https://github.com/Kerem1989/JavaEE-Webshop)
-
-<!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
-
-Special thanks to Dmitry Khalizov for his valuable contributions and collaboration throughout the development of this project.
+Project Link: [https://github.com/Kerem1989/patent-gpt](https://github.com/Kerem1989/patent-gpt)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -114,17 +115,15 @@ Special thanks to Dmitry Khalizov for his valuable contributions and collaborati
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
 [Next-url]: https://nextjs.org/
-[Java.com]: https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=java&logoColor=white
-[Java-url]: https://www.java.com
-[MySQL.com]: https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white
-[MySQL-url]: https://www.mysql.com
-[SpringBoot.com]: https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=spring-boot&logoColor=white
-[SpringBoot-url]: https://spring.io/projects/spring-boot
+[Python.com]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: https://www.python.org/
+[Flask.com]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
+[Flask-url]: https://flask.palletsprojects.com/
+[OpenAI.com]: https://img.shields.io/badge/OpenAI-000000?style=for-the-badge&logo=openai&logoColor=white
+[OpenAI-url]: https://openai.com/
 [HTML.com]: https://img.shields.io/badge/HTML-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [HTML-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
 [JavaScript.com]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[Thymeleaf.com]: https://img.shields.io/badge/Thymeleaf-005F0F?style=for-the-badge&logo=thymeleaf&logoColor=white
-[Thymeleaf-url]: https://www.thymeleaf.org
-[Maven.com]: https://img.shields.io/badge/Maven-C71A36?style=for-the-badge&logo=apache-maven&logoColor=white
-[Maven-url]: https://maven.apache.org
+[CSS.com]: https://img.shields.io/badge/CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white
+[CSS-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
