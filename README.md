@@ -38,7 +38,7 @@
 ### Features:
 * **Interactive Chat Interface:** Users can type their queries and receive responses in real-time.
 * **AI-Powered Responses:** The application uses AI to generate responses related to patents.
-* **User-Friendly Design:** Built with a clean and intuitive design for ease of use..
+* **User-Friendly Design:** Built with a clean and intuitive design for ease of use...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
