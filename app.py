@@ -5,6 +5,8 @@ import os
 app = Flask(__name__)
 
 
+
+
 def is_response_relevant(response):
     # Kontrollera om svaret innehåller nyckelord relaterade till patent
     patent_keywords = ["patent", "uppfinning", "registrering", "PRV", "immateriella rättigheter", "varumärke"]
@@ -49,7 +51,7 @@ def generate():
                 {"role": "user", "content": improvement_prompt}
             ],
             max_tokens=400,
-            temperature=0.6,
+            temperature=0.5
         )
         improved_text = improvement_response.choices[0].message['content'].strip()
 
