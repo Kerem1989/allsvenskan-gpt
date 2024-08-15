@@ -63,9 +63,9 @@
 
 To run this project, you need the following software installed:
 
-* Python 3.7 or higher
-* Flask for creating the web application
-* OpenAI Python package for interacting with the OpenAI API
+* Python 3.7 or higher.
+* Flask for creating the web application.
+* OpenAI Python package for interacting with the OpenAI API.
 
 
 ### Breakdown:
