@@ -32,7 +32,7 @@
 ## About The Project
 <div>
     <p>PatentGPT is an AI-powered assistant designed to assist with questions related to patents. This application offers a user-friendly interface where users can ask questions about patent applications, patent laws, and other patent-related topics.</p>
-    <img src="static/Bild1.png" alt="Screenshot" width="681" height="310">
+    <img src="static/Bild2.png" alt="Screenshot" width="681" height="310">
 </div>
 
 ### Features:
