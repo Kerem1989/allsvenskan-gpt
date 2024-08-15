@@ -4,8 +4,7 @@ import os
 import re
 
 app = Flask(__name__)
-openai.api_key = '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'
-
+openai.api_key = os.getenv('OPENAI_API_KEY')
 def is_response_relevant(response):
     patent_keywords = ["patent", "uppfinning", "registrering", "PRV", "immateriella rättigheter", "varumärke"]
     return any(keyword in response.lower() for keyword in patent_keywords)
