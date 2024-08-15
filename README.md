@@ -58,7 +58,7 @@
 
 
 
-<!-- GETTING STARTED -->
+<!-- GETTING STARTED ->
 ## Getting Started
 
 To run this project, you need the following software installed:
