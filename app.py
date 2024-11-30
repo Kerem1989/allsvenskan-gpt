@@ -4,10 +4,11 @@ import os
 import re
 
 app = Flask(__name__)
-openai.api_key = os.getenv('OPENAI_API_KEY')
+openai.api_key = "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"
+
 def is_response_relevant(response):
-    patent_keywords = ["patent", "uppfinning", "registrering", "PRV", "immateriella rättigheter", "varumärke"]
-    return any(keyword in response.lower() for keyword in patent_keywords)
+    allsvenskan_keywords = ["allsvenskan", "lag", "spelare", "vinst", "säsong", "match", "AIK", "Göteborg", "Malmö"]
+    return any(keyword in response.lower() for keyword in allsvenskan_keywords)
 
 def remove_formatting(text):
     text = re.sub(r'\*\*', '', text)
@@ -27,35 +28,33 @@ def generate():
         return jsonify({'error': 'Prompt is required'}), 400
 
     try:
-        response = openai.Completion.create(
-            model="ft:davinci-002:personal::9oodlELn",
-            prompt=prompt,
-            max_tokens=100,
-            temperature=0.5,
-            stop=["\n", " Användare:", " PatentGPT:", "END"]
+
+        response = openai.ChatCompletion.create(
+            model="ft:gpt-4o-mini-2024-07-18:personal::AZNVqy0Y",
+            messages=[{"role": "system", "content": "Du är en expert på Allsvenskan och kan svara på frågor om lag, resultat, spelare och säsonger."},
+                      {"role": "user", "content": prompt}],
+            max_tokens=200,
+            temperature=0.5
         )
-        generated_text = response.choices[0].text.strip()
+
+        generated_text = response.choices[0].message['content'].strip()
 
         formatted_text = remove_formatting(generated_text)
 
         if not is_response_relevant(formatted_text):
             formatted_text = (
-                "Det verkar som att din fråga inte direkt handlar om patent och registrering. "
-                "För mer detaljerad och specifik information, vänligen kontakta Patent- och registreringsverket (PRV). "
-                "Du kan besöka deras hemsida på [www.prv.se](http://www.prv.se) för att läsa mer eller använda deras online-tjänster. "
-                "Om du föredrar personlig kontakt, ring 08-782 28 00 eller skicka ett mejl till kundsupport@prv.se."
+                "Jag tror att din fråga inte handlar om Allsvenskan. Kan du ge mig mer specifik information eller ställa en fråga om något lag, resultat eller spelare?"
             )
 
-        improvement_prompt = f"Förbättra följande svar så att det är mer informativt och användarvänligt utan att använda någon formatering:\n\n{formatted_text}"
+        improvement_prompt = f"Förbättra följande svar så att det är mer informativt och användarvänligt utan att använda någon formatering. Var kort och direkt om det handlar om statistik, och ge mer information om det efterfrågas:\n\n{formatted_text}"
         improvement_response = openai.ChatCompletion.create(
             model="gpt-4-turbo",
-            messages=[
-                {"role": "system", "content": "Du är en hjälpsam assistent och förbättrar svar för att göra dem mer informativa och användarvänliga."},
-                {"role": "user", "content": improvement_prompt}
-            ],
+            messages=[{"role": "system", "content": "Du är en hjälpsam assistent och förbättrar svar för att göra dem mer informativa och användarvänliga."},
+                      {"role": "user", "content": improvement_prompt}],
             max_tokens=400,
             temperature=0.5
         )
+
         improved_text = improvement_response.choices[0].message['content'].strip()
 
         return jsonify({'response': improved_text})

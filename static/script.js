@@ -21,9 +21,9 @@ function submitPrompt() {
             .then(response => response.json())
             .then(data => {
                 if (data.error) {
-                    chatBox.innerHTML += `<div class='bot-message'>PatentGPT: ${data.error}</div>`;
+                    chatBox.innerHTML += `<div class='bot-message'>AllsvenskanGPT: ${data.error}</div>`;
                 } else {
-                    chatBox.innerHTML += `<div class='bot-message'>PatentGPT: ${data.response}</div>`;
+                    chatBox.innerHTML += `<div class='bot-message'>AllsvenskanGPT: ${data.response}</div>`;
                 }
                 chatBox.scrollTop = chatBox.scrollHeight;
 
@@ -31,7 +31,7 @@ function submitPrompt() {
                 loadingBubble.classList.add('hidden');
             })
             .catch(error => {
-                chatBox.innerHTML += `<div class='bot-message'>PatentGPT: Ett fel inträffade: ${error.message}</div>`;
+                chatBox.innerHTML += `<div class='bot-message'>AllsvenskaGPT: Ett fel inträffade: ${error.message}</div>`;
 
                 // Dölj pulserande bubbla
                 loadingBubble.classList.add('hidden');
