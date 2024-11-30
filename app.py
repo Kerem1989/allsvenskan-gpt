@@ -4,8 +4,7 @@ import os
 import re
 
 app = Flask(__name__)
-openai.api_key = "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"
-
+openai.api_key = os.getenv('OPENAI_API_KEY')
 def is_response_relevant(response):
     allsvenskan_keywords = ["allsvenskan", "lag", "spelare", "vinst", "säsong", "match", "AIK", "Göteborg", "Malmö"]
     return any(keyword in response.lower() for keyword in allsvenskan_keywords)
