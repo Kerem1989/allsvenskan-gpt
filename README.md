@@ -26,18 +26,18 @@
     <img src="static/logo.png" alt="Logo" width="92" height="92">
 </div>
 
-<h3 align="center">PatentGPT</h3>
+<h3 align="center">AllsvenskanGPT</h3>
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <div>
-    <p>PatentGPT is an AI-powered assistant designed to assist with questions related to patents. This application offers a user-friendly interface where users can ask questions about patent applications, patent laws, and other patent-related topics.</p>
+<p>AllsvenskanGPT is an AI-powered assistant designed to answer questions about Allsvenskan, Sweden's premier football league. This application provides a user-friendly interface where users can inquire about teams, players, match results, and other league-related topics.</p>
     <img src="static/Bild2.png" alt="Screenshot" width="681" height="310">
 </div>
 
 ### Features:
 * **Interactive Chat Interface:** Users can type their queries and receive responses in real-time.
-* **AI-Powered Responses:** The application uses AI to generate responses related to patents.
+* **AI-Powered Responses:** The application uses AI to generate responses related to Allsvenskan.
 * **User-Friendly Design:** Built with a clean and intuitive design for ease of use.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
