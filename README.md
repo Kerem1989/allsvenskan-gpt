@@ -32,7 +32,7 @@
 ## About The Project
 <div>
 <p>AllsvenskanGPT is an AI-powered assistant designed to answer questions about Allsvenskan, Sweden's premier football league. This application provides a user-friendly interface where users can inquire about teams, players, match results, and other league-related topics.</p>
-    <img src="static/Bild2.png" alt="Screenshot" width="681" height="310">
+    <img src="static/Bild1.png" alt="Screenshot" width="681" height="310">
 </div>
 
 ### Features:
