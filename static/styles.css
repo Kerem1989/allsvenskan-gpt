@@ -1,4 +1,4 @@
-body, html {
+html, body {
     height: 100%;
     margin: 0;
     font-family: 'Source Sans Pro', Arial, sans-serif;
@@ -193,4 +193,83 @@ button.small-button {
 
 #gpt {
     color: #FECC02;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 990px) {
+    .header {
+        height: 10px; /* Reduced header height for small screens */
+    }
+
+    #chat-container {
+        padding: 10px; /* Reduced padding */
+    }
+
+    #chat-box {
+        margin-bottom: 30px; /* Reduced bottom margin */
+    }
+
+    input[type="text"].long-input {
+        flex-grow: 2; /* Make input field smaller */
+        margin: 10px;
+        padding: 8px;
+    }
+
+    button.small-button {
+        width: 80%; /* Make the button smaller */
+        padding: 8px 16px;
+    }
+
+    .medium-button {
+        width: 100%; /* Make the button full width */
+        padding: 12px 20px;
+    }
+
+    .bg-lightpink {
+        padding-top: 20px; /* Reduced top padding */
+        padding-left: 5px; /* Reduced left padding */
+    }
+
+    .info-box {
+        padding: 8px; /* Reduced padding */
+    }
+}
+
+/* Very small screens like phones in portrait mode */
+@media (max-width: 480px) {
+    .header {
+        height: 8px; /* Even smaller header */
+    }
+
+    .patent-gpt-title {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+    .patent-gpt-main-title {
+        font-size: 1.5rem; /* Smaller font size */
+    }
+
+    .user-message, .bot-message {
+        padding: 8px; /* Smaller padding for messages */
+    }
+
+    input[type="text"].long-input {
+        margin: 5px;
+        padding: 6px; /* Smaller padding */
+    }
+
+    button.small-button {
+        width: 90%; /* Slightly larger button on smaller screens */
+    }
+
+    #loading-bubble {
+        font-size: 14px; /* Smaller font size for bubble */
+        padding: 8px 16px; /* Smaller padding */
+    }
+}
+
+@media (max-width: 990px) {
+    .col-lg-2.d-flex.flex-column.align-items-start.bg-lightpink.p-3 {
+        display: none !important;
+    }
 }
